@@ -16,18 +16,21 @@ $font-size-title: 4em;
 $font-size-title-subtitle: 2.8em;
 $font-size-title-author: 2em;
 
-$font-size-section: 2.8em;
-$font-size-thank-you: 2.8em;
+$font-size-section: 3.2em;
+$font-size-thank-you: 3.2em;
+
+$font-size-slide-number: 1em;
 
 $presentation-font-size-root: $font-size-body;
 
 // Custom colours and variables
-$color-title: #131516;
-$color-subtitle: #545d61;
-$color-heading: #002f5b;
+$color-title: #ffffff;
+$color-subtitle: #EA4237;
+$color-author: #ffffff;
+$color-heading: #3048F3;
 $color-subheading: #8f8f8f;
-$color-section: #002f5b;
-$color-thank-you: #002f5b;
+$color-section: #ffffff;
+$color-thank-you: #ffffff;
 $color-body: #131516;
 $color-accent: #cc0000;
 
@@ -38,27 +41,31 @@ $body-color: $color-body !default;
 $link-color: $color-body !default;
 
 // logo
-$logo: true;
+$logo: false;
 $logo-max-width: 15%;
 $logo-max-height: 15%;
 $logo-vertical-pos: bottom;
 $logo-horizontal-pos: right;
 
 //slide background image
-$slide-background-image: false;
+$slide-background-image: true;
+
+//slide number
+$slide-number-vertical-pos: top;
+$slide-number-horizontal-pos: right;
 
 // presentation title position
-$title-top: 25%;
-$title-left: 38%;
+$title-top: 40%;
+$title-left: 15%;
 $title-text-align: left; //center - this is an alternative
 
 // section title position
-$section-top: 25%;
+$section-top: 40%;
 $section-left: 15%;
 $section-text-align: left; //center - this is an alternative
 
 // thank you title position
-$thank-you-top: 25%;
+$thank-you-top: 40%;
 $thank-you-left: 15%;
 $thank-you-text-align: left; //center - this is an alternative
 
@@ -149,7 +156,7 @@ $page-size: "A4"; //letter - this is the alternative
 
   .author,
   .quarto-title-author-name {
-    color: $color-body;
+    color: $color-author;
   }
 
   .quarto-title-authors {
@@ -164,6 +171,22 @@ $page-size: "A4"; //letter - this is the alternative
       font-size: $font-size-title-author;
     }
   }
+}
+
+.slide-number {
+  @if $slide-number-vertical-pos == top {
+    top: 50px !important
+  } @else {
+    bottom: 40px !important;
+    top: unset !important;
+  }
+  @if $slide-number-horizontal-pos == left {
+    left: 50px !important;
+  } @else {
+    right: 50px !important;
+  }
+  color: $color-body !important;
+  font-size: $font-size-slide-number !important;
 }
 
 // Slide logo
@@ -196,42 +219,43 @@ $page-size: "A4"; //letter - this is the alternative
 // slide background (alternative to logo)
 @if $slide-background-image {
   .slide-background-content {
-    background-image: url(./_extensions/template/background.svg);
+    background-image: url(/_extensions/template/background.svg);
     background-size: 100% 100% !important;
     background-position: 0% 0% !important;
   }
 }
 
 // slide sections
-.slide-background-content .section-slide {
-  background-image: url(./_extensions/template/section-background.svg);
+.section-slide .slide-background-content {
+  background-image: url(/_extensions/template/section-background.png);
   background-size: 100% 100% !important;
   background-position: 0% 0% !important;
 }
 
-
 .reveal .section-slide h2 {
-  color: $color-section;
-  font-size: $font-size-section;
-  font-weight: 700;
-  top: $section-top;
-  left: $section-left;
-  text-align: $section-text-align;
+  position: absolute !important;
+  color: $color-section !important;
+  font-size: $font-size-section !important;
+  font-weight: 700 !important;
+  top: $section-top !important;
+  left: $section-left !important;
+  text-align: $section-text-align !important;
 }
 
-.slide-background-content .thank-you-slide {
-  background-image: url(./_extensions/template/thank-you-background.svg);
+.thank-you-slide .slide-background-content {
+  background-image: url(/_extensions/template/thank-you-background.svg);
   background-size: 100% 100% !important;
   background-position: 0% 0% !important;
 }
 
 .reveal .thank-you-slide h2 {
-  color: $color-section;
-  font-size: $font-size-section;
-  font-weight: 700;
-  top: $section-top;
-  left: $section-left;
-  text-align: $section-text-align;
+  position: absolute !important;
+  color: $color-section !important;
+  font-size: $font-size-section !important;
+  font-weight: 700 !important;
+  top: $section-top !important;
+  left: $section-left !important;
+  text-align: $section-text-align !important;
 }
 
 // slide headings
@@ -269,22 +293,23 @@ $page-size: "A4"; //letter - this is the alternative
 .reveal .slide-number > a[href*='title-slide'] {
   display: none !important;
 }
-.pdf-page:first-of-type .slide-number {
+.pdf-page:has(#title-slide) .slide-number {
   display: none !important;
 }
 
 //dont have slide numbers on the thank-you page
-.reveal .slide-number > a[href*='thank-you-slide'] {
+.reveal .slide-number > a[href*='slide-section'] {
   display: none !important;
 }
-.pdf-page:has(.thank-you) .slide-number {
+
+.pdf-page:has(.section-slide) .slide-number {
   display: none !important;
 }
 
 //dont have slide numbers on the section page
-.reveal .slide-number > a[href*='section-slide'] {
+.reveal .slide-number > a[href*='thank-you'] {
   display: none !important;
 }
-.pdf-page:has(.thank-you) .slide-number {
+.pdf-page:has(.thank-you-slide) .slide-number {
   display: none !important;
 }

@@ -6,11 +6,12 @@ contributes:
   formats:
     revealjs:
       toc: true
-      theme: ['theme.scss']
+      theme: [default, theme.scss]
       css: 'fonts.css'
       logo: 'logo.svg'  
+      slide-number: c
       title-slide-attributes: 
-        data-background-image: 'title-background.png'
+        data-background-image: 'title-background.svg'
       #don't need to change anything beyond here
         data-background-size: 102%
       width: 1920
@@ -21,4 +22,5 @@ contributes:
       progress: false
       toc-depth: 2
       pdf-max-pages-per-slide: 1
+      dpi: 300
 
