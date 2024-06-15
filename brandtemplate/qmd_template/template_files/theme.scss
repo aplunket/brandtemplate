@@ -1,0 +1,289 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Inter" !default;
+$presentation-heading-font: "Inter" !default;
+$presentation-heading-font-weight: 700 !default;
+
+$font-size-body: 1.2em;
+$font-line-height: 1.1em;
+
+$font-size-slide-heading: 2.4em;
+$font-size-slide-subheading: 2.1em;
+
+$font-size-title: 4em;
+$font-size-title-subtitle: 2.8em;
+$font-size-title-author: 2em;
+
+$font-size-section: 2.8em;
+$font-size-thank-you: 2.8em;
+
+$presentation-font-size-root: $font-size-body;
+
+// Custom colours and variables
+$color-title: #131516;
+$color-subtitle: #545d61;
+$color-heading: #002f5b;
+$color-subheading: #8f8f8f;
+$color-section: #002f5b;
+$color-thank-you: #002f5b;
+$color-body: #131516;
+$color-accent: #cc0000;
+
+$body-bg: #fff !default;
+$selection-bg: #fff !default;
+$selection-color: $color-body !default;
+$body-color: $color-body !default;
+$link-color: $color-body !default;
+
+// logo
+$logo: true;
+$logo-max-width: 15%;
+$logo-max-height: 15%;
+$logo-vertical-pos: bottom;
+$logo-horizontal-pos: right;
+
+//slide background image
+$slide-background-image: false;
+
+// presentation title position
+$title-top: 25%;
+$title-left: 38%;
+$title-text-align: left; //center - this is an alternative
+
+// section title position
+$section-top: 25%;
+$section-left: 15%;
+$section-text-align: left; //center - this is an alternative
+
+// thank you title position
+$thank-you-top: 25%;
+$thank-you-left: 15%;
+$thank-you-text-align: left; //center - this is an alternative
+
+// printing
+$page-size: "A4"; //letter - this is the alternative
+
+/*-- scss:rules --*/
+
+// Don't need to change anything beyond this point for basic use of the template
+
+// Printing format defaults to A4 size
+
+@if $page-size == "A4" {
+  @page {
+    size: A4;
+    orientation: landscape;
+    margin: 0;
+  }
+  @media print {
+    html, body {
+      width: 297mm;
+      height: 210mm;
+    }
+  }
+} @else {
+  @page {
+    size: letter;
+    orientation: landscape;
+    margin: 0;
+  }
+  @media print {
+    html, body {
+      width: 280mm;
+      height: 215mm;
+    }
+  }
+}
+
+// standard text
+.reveal p {
+  font-weight: 400 !important;
+  font-size: $font-size-body !important;
+  margin-bottom: calc($font-size-body + 0.05em);  
+  line-height: $font-line-height;
+  color: $color-body !important;
+}
+
+// lists
+.reveal ul {
+  font-weight: 400 !important;
+  font-size: $font-size-body !important;
+  margin-bottom: calc($font-size-body + 0.05em);  
+  line-height: $font-line-height;
+  color: $color-body !important;
+}
+
+.reveal ol {
+  font-weight: 400 !important;
+  font-size: $font-size-body !important;
+  margin-bottom: calc($font-size-body + 0.05em);  
+  line-height: $font-line-height;
+  color: $color-body !important;
+}
+
+// title and headings
+#title-slide {
+  text-align: $title-text-align;
+  position: absolute;
+  top: $title-top !important;
+  left: $title-left !important;
+  width: calc(100% - $title-left) !important; //the left and the width should equal approximately 100%
+  height: 100% !important;
+
+  .title {
+    color: $color-title !important;
+    font-size: $font-size-title;
+    font-weight: 700 !important;
+    line-height: $font-line-height;
+  }
+
+  .subtitle {
+    color: $color-subtitle !important;
+    font-size: $font-size-title-subtitle !important;
+    font-weight: 700 !important;
+    line-height: $font-line-height;
+    margin-top: 0.5em;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    color: $color-body;
+  }
+
+  .quarto-title-authors {
+    justify-content: left;
+    position: absolute;
+    bottom: calc($title-top + 10%); //need to add on the % in the top section to this
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+      font-size: $font-size-title-author;
+    }
+  }
+}
+
+// Slide logo
+@if $logo {
+  .slide-logo {
+    display: block !important;
+    position: fixed !important;
+    @if $logo-vertical-pos == top {
+      top: 0 !important;
+    } @else {
+      bottom: 0 !important;
+    }
+    @if $logo-horizontal-pos == left {
+      left: 5% !important
+    } @else {
+      right: 5% !important;
+    }
+    max-height: $logo-max-height !important;
+    height: 100% !important;
+    max-width: $logo-max-width !important;
+    width: auto !important;
+
+  }
+} @else {
+  .slide-logo {
+    display: none !important;
+  }
+}
+
+// slide background (alternative to logo)
+@if $slide-background-image {
+  .slide-background-content {
+    background-image: url(./_extensions/template/background.svg);
+    background-size: 100% 100% !important;
+    background-position: 0% 0% !important;
+  }
+}
+
+// slide sections
+.slide-background-content .section-slide {
+  background-image: url(./_extensions/template/section-background.svg);
+  background-size: 100% 100% !important;
+  background-position: 0% 0% !important;
+}
+
+
+.reveal .section-slide h2 {
+  color: $color-section;
+  font-size: $font-size-section;
+  font-weight: 700;
+  top: $section-top;
+  left: $section-left;
+  text-align: $section-text-align;
+}
+
+.slide-background-content .thank-you-slide {
+  background-image: url(./_extensions/template/thank-you-background.svg);
+  background-size: 100% 100% !important;
+  background-position: 0% 0% !important;
+}
+
+.reveal .thank-you-slide h2 {
+  color: $color-section;
+  font-size: $font-size-section;
+  font-weight: 700;
+  top: $section-top;
+  left: $section-left;
+  text-align: $section-text-align;
+}
+
+// slide headings
+.reveal h2 {
+  color: $color-heading;
+  font-weight: 700;
+  font-size: $font-size-slide-heading;
+  margin-bottom: calc($font-size-slide-heading - 0.55em);
+}
+
+// slide subheading
+.reveal h3 {
+  color: $color-subheading;
+  font-weight: 700;
+  font-size: $font-size-slide-subheading;
+  margin-top: calc(-1 * $font-size-slide-heading + 0.15em);
+  margin-bottom: calc($font-size-slide-heading - 1.25em);
+}
+
+// section heading of slide content
+.reveal h4 {
+  color: $color-body;
+  font-weight: 700;
+  font-size: $font-size-body;
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+//don't have slide number on title page
+.reveal .slide-number > a[href*='title-slide'] {
+  display: none !important;
+}
+.pdf-page:first-of-type .slide-number {
+  display: none !important;
+}
+
+//dont have slide numbers on the thank-you page
+.reveal .slide-number > a[href*='thank-you-slide'] {
+  display: none !important;
+}
+.pdf-page:has(.thank-you) .slide-number {
+  display: none !important;
+}
+
+//dont have slide numbers on the section page
+.reveal .slide-number > a[href*='section-slide'] {
+  display: none !important;
+}
+.pdf-page:has(.thank-you) .slide-number {
+  display: none !important;
+}
