@@ -1,8 +1,9 @@
 /*-- scss:defaults --*/
 
 // fonts
-$font-family-sans-serif: "Inter" !default;
-$presentation-heading-font: "Inter" !default;
+$font: Inter;
+$font-family-sans-serif: $font !default;
+$presentation-heading-font: $font !default;
 $presentation-heading-font-weight: 700 !default;
 
 $font-size-body: 1.2em;
