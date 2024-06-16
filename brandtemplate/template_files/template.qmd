@@ -1,6 +1,6 @@
 ---
 title: Slide title goes here
-subtitle: Side subtitle goes here or delete this line
+subtitle: Slide subtitle goes here or delete this line
 author: Author name goes here
 format:
   template-revealjs:
