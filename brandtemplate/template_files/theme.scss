@@ -33,9 +33,10 @@ $color-section: #ffffff;
 $color-thank-you: #ffffff;
 $color-body: #131516;
 $color-accent: #cc0000;
+$color-body-background: #ffffff;
 
-$body-bg: #fff !default;
-$selection-bg: #fff !default;
+$body-bg: $color-body-background !default;
+$selection-bg: $color-body-background !default;
 $selection-color: $color-body !default;
 $body-color: $color-body !default;
 $link-color: $color-body !default;
@@ -47,11 +48,16 @@ $logo-max-height: 15%;
 $logo-vertical-pos: bottom;
 $logo-horizontal-pos: right;
 
-//slide background image
+// slide background images
+$section-background: 'section-background.svg';
+$thank-you-background: 'thank-you-background.svg';
+
+//standard background image
 $slide-background-image: true;
+$slide-background: 'background.svg';
 
 //slide number
-$slide-number-vertical-pos: top;
+$slide-number-vertical-pos: bottom;
 $slide-number-horizontal-pos: right;
 
 // presentation title position
@@ -71,6 +77,8 @@ $thank-you-text-align: left; //center - this is an alternative
 
 // printing
 $page-size: "A4"; //letter - this is the alternative
+
+
 
 /*-- scss:rules --*/
 
@@ -219,7 +227,7 @@ $page-size: "A4"; //letter - this is the alternative
 // slide background (alternative to logo)
 @if $slide-background-image {
   .slide-background-content {
-    background-image: url(/_extensions/template/background.svg);
+    background-image: url(#{'/_extensions/brandtemplate/' + $slide-background});
     background-size: 100% 100% !important;
     background-position: 0% 0% !important;
   }
@@ -227,7 +235,7 @@ $page-size: "A4"; //letter - this is the alternative
 
 // slide sections
 .section-slide .slide-background-content {
-  background-image: url(/_extensions/template/section-background.png);
+  background-image: url(#{'/_extensions/brandtemplate/' + $section-background});
   background-size: 100% 100% !important;
   background-position: 0% 0% !important;
 }
@@ -243,7 +251,7 @@ $page-size: "A4"; //letter - this is the alternative
 }
 
 .thank-you-slide .slide-background-content {
-  background-image: url(/_extensions/template/thank-you-background.svg);
+  background-image: url(#{'/_extensions/brandtemplate/' + $thank-you-background});
   background-size: 100% 100% !important;
   background-position: 0% 0% !important;
 }
@@ -283,7 +291,7 @@ $page-size: "A4"; //letter - this is the alternative
 }
 
 .bg {
-  background-color: var(--col, #fff);
+  background-color: var(--col, $color-body-background);
   padding: 0.1em;
   border-radius: 5px;
   display: inline-block;

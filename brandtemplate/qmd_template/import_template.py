@@ -36,7 +36,7 @@ def import_quarto_template(qmd_filename:str = 'template.qmd', destination_dir:st
     shutil.copy2(resource_dir.joinpath('template.qmd'), destination_dir.joinpath(qmd_filename))
   
   #create directory to copy the template files to
-  quarto_dir = destination_dir.joinpath('_extenstions/template')
+  quarto_dir = destination_dir.joinpath('_extenstions/brandtemplate')
 
   if quarto_dir.exists() == False:
     quarto_dir.mkdir(parents=True)

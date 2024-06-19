@@ -7,7 +7,7 @@ from plotnine.themes.elements import (
   element_text
 )
 
-class branded_plotnine_theme(theme_bw):
+class brandtemplate_plotnine_theme(theme_bw):
   """
   A custom theme for plotnine.
 
