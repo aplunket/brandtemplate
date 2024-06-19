@@ -2,9 +2,9 @@
 # Overall
 #---------------------------------------------------------------------------------
 
-package_name: brandtemplate2
+package_name: brandtemplate
 version: 0.1.0
-author: [name <name@email.com>]
+authors: [aplunket <applunket@gmail.com>]
 
 #---------------------------------------------------------------------------------
 # Font
@@ -17,7 +17,8 @@ font:
   font_type: ttf                           #can be one of ttf, otf, woff, woff2
   font_regular: Inter-Regular.ttf
   font_bold: Inter-Bold.ttf
-  font_italic: Inter-Italic.tff
+  font_italic: Inter-Italic.ttf
+  font_bolditalic: Inter-BoldItalic.ttf
 
 #---------------------------------------------------------------------------------
 # Quarto template
@@ -33,7 +34,7 @@ quarto:
   slide-background-image: true
   slide-background: background.svg        
 
-  page-size: "A4" #alternative is "letter" and needs the quotes to work
+  page-size: A4 #alternative is "letter"
 
   font-size-body: 1.2em
   font-line-height: 1.1em
@@ -61,19 +62,19 @@ quarto:
   slide-number-horizontal-pos: right
 
   #presentation title position
-  $title-top: 40%
-  $title-left: 15%
-  $title-text-align: left #center is an alternative
+  title-top: 40%
+  title-left: 15%
+  title-text-align: left #center is an alternative
 
   #section title position
-  $section-top: 40%
-  $section-left: 15%
-  $section-text-align: left
+  section-top: 40%
+  section-left: 15%
+  section-text-align: left
 
   #thank you title position
-  $thank-you-top: 40%
-  $thank-you-left: 15%
-  $thank-you-text-align: left
+  thank-you-top: 40%
+  thank-you-left: 15%
+  thank-you-text-align: left
 
   use_logo: false
   logo_file: logo.svg
@@ -102,5 +103,7 @@ plotnine:
 
 
 #---------------------------------------------------------------------------------
-# great_tables
+# great-tables
 #---------------------------------------------------------------------------------
+
+great-tables:

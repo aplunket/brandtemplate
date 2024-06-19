@@ -3,7 +3,7 @@ title: Slide title goes here
 subtitle: Slide subtitle goes here or delete this line
 author: Author name goes here
 format:
-  template-revealjs:
+  brandtemplate-revealjs:
     toc: false
 ---
 
