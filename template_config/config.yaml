@@ -92,15 +92,13 @@ plotnine:
   title-size: 32
   subtitle-size: 20
   caption-size: 15
-  base-graph-color: #36454f
-  gridlines-color: #ededed
-  title-color: #36454f
-  subtitle-color: #5E6A72
-  caption-color: #5E6A72
+  base-graph-color: '#36454f'
+  gridlines-color: '#ededed'
+  title-color: '#36454f'
+  subtitle-color: '#5E6A72'
+  caption-color: '#5E6A72'
   legend-position: bottom
   legend-direction: horizontal
-  
-
 
 #---------------------------------------------------------------------------------
 # great-tables

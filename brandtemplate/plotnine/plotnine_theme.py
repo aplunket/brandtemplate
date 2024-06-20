@@ -7,6 +7,20 @@ from plotnine.themes.elements import (
   element_text
 )
 
+BASE_FONT_SIZE=15
+BASE_FAMILY='Inter'
+TITLE_SIZE=32
+SUBTITLE_SIZE=20
+CAPTION_SIZE=15
+BASE_GRAPH_COLOR='#36454f'
+GRIDLINES_COLOR='#ededed'
+TITLE_COLOR='#36454f'
+SUBTITLE_COLOR='#5E6A72'
+CAPTION_COLOR='#5E6A72'
+LEGEND_POSITION='bottom'
+LEGEND_DIRECTION='horizontal'
+
+
 class brandtemplate_plotnine_theme(theme_bw):
   """
   A custom theme for plotnine.
@@ -28,47 +42,46 @@ class brandtemplate_plotnine_theme(theme_bw):
 
   def __init__(
       self, 
-      base_size=15, 
-      base_family='Inter',
+      base_size=BASE_FONT_SIZE, 
+      base_family=BASE_FAMILY,
       gridlines='X',
       axis_title='',
       axis_line='X',
       axis_start_zero='X',
-      title_size=32,
-      subtitle_size=20,
-      caption_size=15
-
+      title_size=TITLE_SIZE,
+      subtitle_size=SUBTITLE_SIZE,
+      caption_size=CAPTION_SIZE
       ):
     super().__init__(base_size, base_family)
     self += theme(
-      line=element_rect(color='#36454f'),
+      line=element_rect(color=BASE_GRAPH_COLOR),
       rect=element_rect(fill='white', color='black'),
-      text=element_text(color='#36454f', fontweight='regular'), 
-      title=element_text(color='#36454f'),
+      text=element_text(color=BASE_GRAPH_COLOR, fontweight='regular'), 
+      title=element_text(color=BASE_GRAPH_COLOR),
       
       plot_background=element_rect(color='white', fill='white'),
       strip_background=element_rect(fill='white'),
 
-      plot_title=element_text(color='#36454f', fontweight='bold', size=title_size),
-      plot_subtitle=element_text(color='#5E6A72', fontweight='regular', size=subtitle_size),
-      plot_caption=element_text(color='#5E6A72', fontweight='regular', size=caption_size),
+      plot_title=element_text(color=TITLE_COLOR, fontweight='bold', size=title_size),
+      plot_subtitle=element_text(color=SUBTITLE_COLOR, fontweight='regular', size=subtitle_size),
+      plot_caption=element_text(color=CAPTION_COLOR, fontweight='regular', size=caption_size),
 
       plot_margin=0, #check this
 
       panel_border=element_blank(),
-      panel_grid_major=element_line(color = '#ededed'),
-      panel_grid_major_x=element_line(color='#ededed') if 'X' in gridlines.upper() else element_blank(),
-      panel_grid_major_y=element_line(color='#ededed') if 'Y' in gridlines.upper() else element_blank(),
+      panel_grid_major=element_line(color = GRIDLINES_COLOR),
+      panel_grid_major_x=element_line(color=GRIDLINES_COLOR) if 'X' in gridlines.upper() else element_blank(),
+      panel_grid_major_y=element_line(color=GRIDLINES_COLOR) if 'Y' in gridlines.upper() else element_blank(),
       panel_grid_minor=element_blank(),
 
       axis_title_x=element_text() if 'X' in axis_title.upper() else element_blank(),
       axis_title_y=element_text() if 'Y' in axis_title.upper() else element_blank(),
       axis_ticks=element_blank(),
-      axis_line_x=element_blank if 'X' not in axis_line.upper() else element_line() if 'X' in axis_start_zero.upper() else element_line(color='#ededed'),
-      axis_line_x=element_blank if 'Y' not in axis_line.upper() else element_line() if 'Y' in axis_start_zero.upper() else element_line(color='#ededed'),
+      axis_line_x=element_blank if 'X' not in axis_line.upper() else element_line() if 'X' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
+      axis_line_y=element_blank if 'Y' not in axis_line.upper() else element_line() if 'Y' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
 
       legend_background=element_blank(),
-      legend_position='bottom',
+      legend_position=LEGEND_POSITION,
       legend_box='vertical',
-      legend_direction='horizontal'
+      legend_direction=LEGEND_DIRECTION
       )

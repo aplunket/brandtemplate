@@ -4,12 +4,12 @@ package_name: brandtemplate
 version: 0.1.0
 authors: [aplunket <applunket@gmail.com>]
 font: 
-  font_family: 
-  font_type:                            
-  font_regular: 
-  font_bold: 
-  font_italic: 
-  font_bolditalic:
+  font_family: Inter
+  font_type: ttf
+  font_regular: Inter-Regular.ttf
+  font_bold: Inter-Bold.ttf
+  font_italic: Inter-Italic.ttf
+  font_bolditalic: Inter-BoldItalic.ttf
 quarto: 
   title-background:           
   section-background:       
@@ -55,16 +55,16 @@ quarto:
   logo-vertical-pos: 
   logo-horizontal-pos: 
 plotnine:
-  base-font-size: 
-  title-size: 
-  subtitle-size: 
-  caption-size: 
-  base-graph-color: 
-  gridlines-color: 
-  title-color: 
-  subtitle-color: 
-  caption-color: 
-  legend-position: 
-  legend-direction: 
+  base-font-size: 15
+  title-size: 32
+  subtitle-size: 20
+  caption-size: 15
+  base-graph-color: '#36454f'
+  gridlines-color: '#ededed'
+  title-color: '#36454f'
+  subtitle-color: '#5E6A72'
+  caption-color: '#5E6A72'
+  legend-position: bottom
+  legend-direction: horizontal
 great-tables:
 
