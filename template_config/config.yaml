@@ -13,12 +13,12 @@ authors: [aplunket <applunket@gmail.com>]
 # into brandtemplate/template_files/font before running
 #---------------------------------------------------------------------------------
 font: 
-  font_family: Inter
-  font_type: ttf                           #can be one of ttf, otf, woff, woff2
-  font_regular: Inter-Regular.ttf
-  font_bold: Inter-Bold.ttf
-  font_italic: Inter-Italic.ttf
-  font_bolditalic: Inter-BoldItalic.ttf
+  font-family: Inter
+  font-type: ttf                           #can be one of ttf, otf, woff, woff2
+  font-regular: Inter-Regular.ttf
+  font-bold: Inter-Bold.ttf
+  font-italic: Inter-Italic.ttf
+  font-bolditalic: Inter-BoldItalic.ttf
 
 #---------------------------------------------------------------------------------
 # Quarto template
@@ -31,7 +31,7 @@ quarto:
   section-background: 'section-background.svg'      #new section slide background
   thank-you-background: 'thank-you-background.svg'  #thank you slide background
 
-  slide-background-image: 'true'
+  use-slide-background: 'true'
   slide-background: 'background.svg'        
 
   page-size: 'A4' #alternative is "letter"
@@ -76,8 +76,8 @@ quarto:
   thank-you-left: 15%
   thank-you-text-align: left
 
-  use_logo: 'false'
-  logo_file: logo.svg
+  use-logo: 'false'
+  logo-file: 'logo.svg'
   logo-max-width: 15%
   logo-max-height: 5%
   logo-vertical-pos: bottom
