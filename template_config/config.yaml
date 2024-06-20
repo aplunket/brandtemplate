@@ -27,14 +27,14 @@ font:
 # into brandtemplate/template_files before running
 #---------------------------------------------------------------------------------
 quarto: 
-  title-background: title-background.svg          #cover slide background
-  section-background: section-background.svg      #new section slide background
-  thank-you-background: thank-you-background.svg  #thank you slide background
+  title-background: 'title-background.svg'         #cover slide background
+  section-background: 'section-background.svg'      #new section slide background
+  thank-you-background: 'thank-you-background.svg'  #thank you slide background
 
-  slide-background-image: true
-  slide-background: background.svg        
+  slide-background-image: 'true'
+  slide-background: 'background.svg'        
 
-  page-size: A4 #alternative is "letter"
+  page-size: 'A4' #alternative is "letter"
 
   font-size-body: 1.2em
   font-line-height: 1.1em
@@ -47,16 +47,16 @@ quarto:
   font-size-thank-you: 3.2em
   font-size-slide-number: 1em
 
-  color-title: #ffffff
-  color-subtitle: #EA4237
-  color-author: #ffffff
-  color-heading: #3048F3
-  color-subheading: #8f8f8f
-  color-section: #ffffff
-  color-thank-you: #ffffff
-  color-body: #131516
-  color-accent: #cc0000
-  color-body-background: #ffffff
+  color-title: '#ffffff'
+  color-subtitle: '#EA4237'
+  color-author: '#ffffff'
+  color-heading: '#3048F3'
+  color-subheading: '#8f8f8f'
+  color-section: '#ffffff'
+  color-thank-you: '#ffffff'
+  color-body: '#131516'
+  color-accent: '#cc0000'
+  color-body-background: '#ffffff'
 
   slide-number-vertical-pos: bottom
   slide-number-horizontal-pos: right
@@ -76,7 +76,7 @@ quarto:
   thank-you-left: 15%
   thank-you-text-align: left
 
-  use_logo: false
+  use_logo: 'false'
   logo_file: logo.svg
   logo-max-width: 15%
   logo-max-height: 5%
