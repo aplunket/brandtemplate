@@ -113,7 +113,7 @@ def plotnine_coloured_axis_labels(
   if draw_fig:
     plotnine_fig = plotnine_fig.draw()
   
-  for ax in plotnine_fig.axex:
+  for ax in plotnine_fig.axes:
     if 'X' in axis.upper():
       for l in ax.get_xticklabels():
         c = label_color_dict.get(l.get_text())

@@ -42,9 +42,9 @@ $body-color: $color-body !default;
 $link-color: $color-body !default;
 
 // logo
-$logo: false;
+$use-logo: false;
 $logo-max-width: 15%;
-$logo-max-height: 15%;
+$logo-max-height: 5%;
 $logo-vertical-pos: bottom;
 $logo-horizontal-pos: right;
 
@@ -53,7 +53,7 @@ $section-background: 'section-background.svg';
 $thank-you-background: 'thank-you-background.svg';
 
 //standard background image
-$slide-background-image: true;
+$use-slide-background: true;
 $slide-background: 'background.svg';
 
 //slide number
@@ -63,20 +63,20 @@ $slide-number-horizontal-pos: right;
 // presentation title position
 $title-top: 40%;
 $title-left: 15%;
-$title-text-align: left; //center - this is an alternative
+$title-text-align: left;
 
 // section title position
 $section-top: 40%;
 $section-left: 15%;
-$section-text-align: left; //center - this is an alternative
+$section-text-align: left;
 
 // thank you title position
 $thank-you-top: 40%;
 $thank-you-left: 15%;
-$thank-you-text-align: left; //center - this is an alternative
+$thank-you-text-align: left;
 
 // printing
-$page-size: "A4"; //letter - this is the alternative
+$page-size: 'A4';
 
 
 
@@ -198,7 +198,7 @@ $page-size: "A4"; //letter - this is the alternative
 }
 
 // Slide logo
-@if $logo {
+@if $use-logo {
   .slide-logo {
     display: block !important;
     position: fixed !important;
@@ -225,7 +225,7 @@ $page-size: "A4"; //letter - this is the alternative
 }
 
 // slide background (alternative to logo)
-@if $slide-background-image {
+@if $use-slide-background {
   .slide-background-content {
     background-image: url(#{'/_extensions/brandtemplate/' + $slide-background});
     background-size: 100% 100% !important;
