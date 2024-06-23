@@ -27,7 +27,10 @@ def import_quarto_template(qmd_filename:str = 'template.qmd', destination_dir:st
   if destination_dir is None:
     destination_dir = Path.cwd()
   else:
+    if Path(destination_dir).exists() == False:
+      raise FileNotFoundError(f'The folder {destination_dir} does not exist. Please create it and run this command again.')
     destination_dir = Path(destination_dir)
+        
 
   #copy the template qmd file to the main directory
   if destination_dir.joinpath(qmd_filename).exists():

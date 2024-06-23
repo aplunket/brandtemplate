@@ -26,11 +26,16 @@ def config_template():
       f'name = "{current_name}"', 
       f'name = "{new_name}"'
       )
+    replace_line_containing_string(
+      'pyproject.toml', 
+      f'name = "{current_name}"', 
+      f'name = "{new_name}"'
+      )
     #update name in _extension.yml
     replace_line_containing_string(
       f'{new_name}/template_files/_extension.yml', 
-      f'title: {current_name}',
-      f'title: {new_name}'
+      f'{current_name}-import = "{current_name}.qmd_template.cli_import_template:_cli_import_template"',
+      f'{new_name}-import = "{new_name}.qmd_template.cli_import_template:_cli_import_template"'
       )
     #update name in template.qmd
     replace_line_containing_string(

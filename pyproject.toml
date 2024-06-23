@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "brandtemplate"
-version = "0.1.0"
+version = "0.1.1"
 description = "Template for qmd presenations"
 authors = ["aplunket <applunket@gmail.com>"]
-readme = "README.md"
+readme = "PACKAGE.md"
 include = [
   "brandtemplate/qmd_template/template_files/*"
 ]
@@ -21,8 +21,9 @@ ipykernel = "^6.29.4"
 pyyaml = "^6.0.1"
 jsondiff = "^2.0.0"
 
+[tool.poetry.scripts]
+brandtemplate-import = "brandtemplate.qmd_template.cli_import_template:_cli_import_template"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-
