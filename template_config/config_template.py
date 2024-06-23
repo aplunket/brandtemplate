@@ -52,9 +52,13 @@ def config_template():
     #update name in import_template.py
     replace_line_containing_string(
       f'{new_name}/qmd_template/import_template.py', 
-      f"  quarto_dir = destination_dir.joinpath('_extenstions/{current_name}')",
-      f"  quarto_dir = destination_dir.joinpath('_extenstions/{new_name}')",
+      f"  quarto_dir = destination_dir.joinpath('_extensions/{current_name}')",
+      f"  quarto_dir = destination_dir.joinpath('_extensions/{new_name}')",
       )
+    #update name in README.md
+    replace_in_md('README.md', current_name, new_name)
+    #update name in PACKAGE.md
+    replace_in_md('PACKAGE.md', current_name, new_name)
     
   if 'version' in config_diff:
     replace_line_containing_string(
@@ -191,6 +195,11 @@ def config_template():
       file.write(comment)
       yaml.safe_dump(config, file)
 
+
+#-----------------------------------------------------------------------------------
+# Supporting functions
+#-----------------------------------------------------------------------------------
+
 # Function to load YAML file
 def load_yaml(file_path):
   with open(file_path, 'r') as file:
@@ -222,3 +231,21 @@ def replace_line_containing_string(file_path: str, search_string: str, replaceme
   if found:
     with open(file_path, 'w') as file:
       file.writelines(lines)
+
+def replace_in_md(file_path, old_str, new_str):
+    try:
+        # Read the entire content of the file
+        with open(file_path, 'r') as file:
+            file_content = file.read()
+
+        # Perform the replacement
+        updated_content = file_content.replace(old_str, new_str)
+
+        # Write the updated content back to the file
+        with open(file_path, 'w') as file:
+            file.write(updated_content)
+
+    except FileNotFoundError:
+        print(f'Error: File not found - {file_path}')
+    except Exception as e:
+        print(f'Error: {e}')

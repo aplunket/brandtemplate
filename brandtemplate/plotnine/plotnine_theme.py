@@ -44,7 +44,7 @@ class brandtemplate_plotnine_theme(theme_bw):
       self, 
       base_size=BASE_FONT_SIZE, 
       base_family=BASE_FAMILY,
-      gridlines='X',
+      gridlines='Y',
       axis_title='',
       axis_line='X',
       axis_start_zero='X',
@@ -54,7 +54,7 @@ class brandtemplate_plotnine_theme(theme_bw):
       ):
     super().__init__(base_size, base_family)
     self += theme(
-      line=element_rect(color=BASE_GRAPH_COLOR),
+      line=element_rect(),
       rect=element_rect(fill='white', color='black'),
       text=element_text(color=BASE_GRAPH_COLOR, fontweight='regular'), 
       title=element_text(color=BASE_GRAPH_COLOR),
@@ -77,8 +77,8 @@ class brandtemplate_plotnine_theme(theme_bw):
       axis_title_x=element_text() if 'X' in axis_title.upper() else element_blank(),
       axis_title_y=element_text() if 'Y' in axis_title.upper() else element_blank(),
       axis_ticks=element_blank(),
-      axis_line_x=element_blank if 'X' not in axis_line.upper() else element_line() if 'X' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
-      axis_line_y=element_blank if 'Y' not in axis_line.upper() else element_line() if 'Y' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
+      axis_line_x=element_blank() if 'X' not in axis_line.upper() else element_line() if 'X' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
+      axis_line_y=element_blank() if 'Y' not in axis_line.upper() else element_line() if 'Y' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
 
       legend_background=element_blank(),
       legend_position=LEGEND_POSITION,
