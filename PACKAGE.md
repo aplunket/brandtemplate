@@ -48,8 +48,6 @@ ggplot(mpg, aes(x='class')) +
 )
 ```
 
-![Add a theme to a plotnine graph](example/graph/plotnine_add_theme.png)
-
 #### Add standard titles to graph 
 
 ```{python}
@@ -73,8 +71,6 @@ plotnine_titles(
   caption='The graph caption goes here'
   )
 ```
-
-![Graph with simple title, subtitle and caption](example/graph/plotnine_simple_titles.png)
 
 #### Add complex titles to the graph
 
@@ -100,8 +96,6 @@ plotnine_titles(
   )
 ```
 
-![Graph with multi coloured title](example/graph/plotnine_complex_titles.png)
-
 #### Recolour axis labels 
 
 ```{python}
@@ -123,8 +117,6 @@ plotnine_coloured_axis_labels(
   axis='X'
   )
 ```
-
-![Graph with the x axis labels having mutiple colours](example/graph/plotnine_recolour_axis_text.png)
 
 ## Features
 
