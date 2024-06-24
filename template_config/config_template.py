@@ -249,3 +249,6 @@ def replace_in_md(file_path, old_str, new_str):
         print(f'Error: File not found - {file_path}')
     except Exception as e:
         print(f'Error: {e}')
+
+if __name__ == '__main__':
+  config_template()

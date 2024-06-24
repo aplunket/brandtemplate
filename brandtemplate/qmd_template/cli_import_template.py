@@ -3,6 +3,10 @@ from .import_template import import_quarto_template
 import argparse
 
 def _cli_import_template():
+  '''
+  Function for running import_template via command line. 
+  Use import_template instead if running from python.
+  '''
   parser = argparse.ArgumentParser(description='Import the branded quarto template to your project.')
 
   parser.add_argument('-n', '--name', type=str, default='template.qmd', help='The name of the qmd file to create. Defaults to "template.qmd" if not specified.')

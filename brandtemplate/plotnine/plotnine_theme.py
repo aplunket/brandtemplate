@@ -11,7 +11,7 @@ BASE_FONT_SIZE=15
 BASE_FAMILY='Inter'
 TITLE_SIZE=32
 SUBTITLE_SIZE=20
-CAPTION_SIZE=15
+CAPTION_SIZE=10
 BASE_GRAPH_COLOR='#36454f'
 GRIDLINES_COLOR='#ededed'
 TITLE_COLOR='#36454f'
@@ -66,7 +66,7 @@ class brandtemplate_plotnine_theme(theme_bw):
       plot_subtitle=element_text(color=SUBTITLE_COLOR, fontweight='regular', size=subtitle_size),
       plot_caption=element_text(color=CAPTION_COLOR, fontweight='regular', size=caption_size),
 
-      plot_margin=0, #check this
+      plot_margin=0.005, 
 
       panel_border=element_blank(),
       panel_grid_major=element_line(color = GRIDLINES_COLOR),
@@ -74,9 +74,10 @@ class brandtemplate_plotnine_theme(theme_bw):
       panel_grid_major_y=element_line(color=GRIDLINES_COLOR) if 'Y' in gridlines.upper() else element_blank(),
       panel_grid_minor=element_blank(),
 
-      axis_title_x=element_text() if 'X' in axis_title.upper() else element_blank(),
-      axis_title_y=element_text() if 'Y' in axis_title.upper() else element_blank(),
-      axis_ticks=element_blank(),
+      axis_title_x=element_text(margin={'t': 10}) if 'X' in axis_title.upper() else element_blank(),
+      axis_title_y=element_text(margin={'r': 10}) if 'Y' in axis_title.upper() else element_blank(),
+      axis_ticks=element_line(color='white'),
+      axis_ticks_length=8, #used to add space between axis and text
       axis_line_x=element_blank() if 'X' not in axis_line.upper() else element_line() if 'X' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
       axis_line_y=element_blank() if 'Y' not in axis_line.upper() else element_line() if 'Y' in axis_start_zero.upper() else element_line(color=GRIDLINES_COLOR),
 

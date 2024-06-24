@@ -91,7 +91,7 @@ plotnine:
   base-font-size: 15
   title-size: 32
   subtitle-size: 20
-  caption-size: 15
+  caption-size: 10
   base-graph-color: '#36454f'
   gridlines-color: '#ededed'
   title-color: '#36454f'

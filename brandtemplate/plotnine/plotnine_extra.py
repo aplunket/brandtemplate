@@ -6,11 +6,11 @@ def plotnine_titles(
     subtitle=None,
     caption=None,
     fontfamily=None,
-    title_size=32,
+    title_size=20,
     title_color='black',
-    subtitle_size=20,
+    subtitle_size=15,
     subtitle_color='darkgrey',
-    caption_size=15,
+    caption_size=10,
     caption_color='grey',
     draw_fig=True,
     **kwargs
@@ -41,7 +41,7 @@ def plotnine_titles(
   if draw_fig:
     plotnine_fig = plotnine_fig.draw()
 
-  y_title = 1.02 if subtitle is None or subtitle == '' else 1.13
+  y_title = 1.02 if subtitle is None or subtitle == '' else 1.10
   if title is not None:
     plotnine_fig = plotnine_text(
       plotnine_fig=plotnine_fig, 

@@ -15,7 +15,7 @@ plotnine:
   base-font-size: 15
   base-graph-color: '#36454f'
   caption-color: '#5E6A72'
-  caption-size: 15
+  caption-size: 10
   gridlines-color: '#ededed'
   legend-direction: horizontal
   legend-position: bottom
@@ -44,7 +44,7 @@ quarto:
   font-size-title: 4em
   font-size-title-author: 2em
   font-size-title-subtitle: 2.8em
-  logo-file: logo.png
+  logo-file: logo.svg
   logo-horizontal-pos: right
   logo-max-height: 5%
   logo-max-width: 15%
@@ -61,7 +61,7 @@ quarto:
   thank-you-left: 15%
   thank-you-text-align: left
   thank-you-top: 40%
-  title-background: title-background.png
+  title-background: title-background.svg
   title-left: 15%
   title-text-align: left
   title-top: 40%
