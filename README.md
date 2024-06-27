@@ -185,4 +185,4 @@ The following functions are available for use with the template
 
 ### great-tables helper functions
 
-To be added.
+To be added once opt_css is added to great-tables.
