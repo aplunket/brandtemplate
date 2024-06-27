@@ -12,7 +12,7 @@ The template uses the presoutput package ([PYPI](https://pypi.org/project/presou
 - Update `config.yaml` in `template_config` to update the formatting of the template.
   - If changing the fonts add the new font files into `brandtemplate/template_files/font` and delete the existing files.
   - Change the background and logo image files in `brandtemplate/template_files` to the ones for your brand. This can be copied out of your PowerPoint template and saved as an image.
-- Run `python template_config/config_template.py` to update the template based on the changes to your `config.yaml`.
+- Run `python template_config/template_config.py` to update the template based on the changes to your `config.yaml`.
 - Make any changes to `PACKAGE.md` to update the documentation for how to install the package if using a private repo.
 
 ## Build and publish template
