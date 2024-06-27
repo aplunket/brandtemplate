@@ -20,6 +20,7 @@ pylance = "^0.12.2"
 ipykernel = "^6.29.4"
 pyyaml = "^6.0.1"
 jsondiff = "^2.0.0"
+black = "^24.4.2"
 
 [tool.poetry.scripts]
 brandtemplate-import = "brandtemplate.qmd_template.cli_import_template:_cli_import_template"

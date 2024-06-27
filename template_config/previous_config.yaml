@@ -12,17 +12,26 @@ font:
 great-tables: null
 package_name: brandtemplate
 plotnine:
-  base-font-size: 15
-  base-graph-color: '#36454f'
-  caption-color: '#5E6A72'
-  caption-size: 10
-  gridlines-color: '#ededed'
-  legend-direction: horizontal
-  legend-position: bottom
-  subtitle-color: '#5E6A72'
-  subtitle-size: 20
-  title-color: '#36454f'
-  title-size: 32
+  plotnine-extra:
+    base-graph-color: '#36454f'
+    caption-color: grey
+    caption-size: 10
+    subtitle-color: darkgrey
+    subtitle-size: 15
+    title-color: black
+    title-size: 20
+  plotnine-theme:
+    base-graph-color: '#36454f'
+    base-size: 15
+    caption-color: '#5E6A72'
+    caption-size: 10
+    gridlines-color: '#ededed'
+    legend-direction: horizontal
+    legend-position: bottom
+    subtitle-color: '#5E6A72'
+    subtitle-size: 20
+    title-color: '#36454f'
+    title-size: 32
 quarto:
   color-accent: '#cc0000'
   color-author: '#ffffff'

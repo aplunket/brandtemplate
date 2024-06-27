@@ -85,20 +85,32 @@ quarto:
 
 #---------------------------------------------------------------------------------
 # plotnine
+#
+# Titles with plotnine extra will appear larger as these are rendered directy in matplotlib on the figure than through plotnine. Make the titles approx 2/3 of the size of the plotnine theme ones.
+# Colors can be either a hex code or colour name
 #---------------------------------------------------------------------------------
 
 plotnine:
-  base-font-size: 15
-  title-size: 32
-  subtitle-size: 20
-  caption-size: 10
-  base-graph-color: '#36454f'
-  gridlines-color: '#ededed'
-  title-color: '#36454f'
-  subtitle-color: '#5E6A72'
-  caption-color: '#5E6A72'
-  legend-position: bottom
-  legend-direction: horizontal
+  plotnine-theme:
+    base-size: 15
+    title-size: 32
+    subtitle-size: 20
+    caption-size: 10
+    base-graph-color: '#36454f'
+    gridlines-color: '#ededed'
+    title-color: '#36454f'
+    subtitle-color: '#5E6A72'
+    caption-color: '#5E6A72'
+    legend-position: bottom
+    legend-direction: horizontal
+  plotnine-extra:
+    title-size: 20
+    subtitle-size: 15
+    caption-size: 10
+    title-color: 'black'
+    subtitle-color: 'darkgrey'
+    caption-color: 'grey'
+    base-graph-color: '#36454f' #should be the same as base graph colour in plotnine theme
 
 #---------------------------------------------------------------------------------
 # great-tables
