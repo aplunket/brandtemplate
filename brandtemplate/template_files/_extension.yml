@@ -7,7 +7,7 @@ contributes:
     revealjs:
       toc: true
       theme: [default, theme.scss]
-      css: 'fonts.css'
+      css: ['fonts.css', 'background.css']
       logo: 'logo.svg'  
       slide-number: c
       title-slide-attributes: 

@@ -175,6 +175,18 @@ def config_template():
                 f"data-background-image: '{config['quarto']['title-background']}'",
                 keep_leading_whitespace=True,
             )
+            
+        #update background.css
+        if "section-background" in config_diff["quarto"] or "thank-you-background" in config_diff["quarto"] or "slide-background" in config_diff["quarto"]:
+            line_background=f'.slide-background-content {{ background-image: url(./{config['quarto']['slide-background']}); background-size: 100% 100% !important; background-position: 0% 0% !important; }}'
+            line_section=f'.section-slide .slide-background-content {{ background-image: url(./{config['quarto']['section-background']}); background-size: 100% 100% !important; background-position: 0% 0% !important; }}'
+            line_thankyou=f'.thank-you-slide .slide-background-content {{ background-image: url(./{config['quarto']['thank-you-background']}); background-size: 100% 100% !important; background-position: 0% 0% !important; }}'
+            
+            with open(f"{new_name}/template_files/background.css", "w") as file:
+                file.write(str(line_background) + "\n")
+                file.write(str(line_section) + "\n")
+                file.write(str(line_thankyou))
+            
 
     # ---------------------------------------------------------------------------------
     # plotnine
