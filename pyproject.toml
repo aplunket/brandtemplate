@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "brandtemplate"
-version = "0.1.3"
+version = "0.1.4"
 description = "Template for qmd presenations"
 authors = ["aplunket <applunket@gmail.com>"]
 readme = "PACKAGE.md"
